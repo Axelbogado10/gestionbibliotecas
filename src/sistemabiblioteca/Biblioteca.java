@@ -14,15 +14,15 @@ import java.util.List;
  */
 public class Biblioteca {
     private List<Publicacion> publicaciones;
-    private List<Libro> ListaLibro;
-    private List<Ilustracion> Ilustraciones;
-    private List<Revista> Revistas;
+    private List<Libro> listaLibro;
+    private List<Ilustracion> ilustraciones;
+    private List<Revista> revistas;
 
     public Biblioteca() {
         publicaciones = new ArrayList<>();
-        ListaLibro = new ArrayList<>();
-        Ilustraciones = new ArrayList<>();
-        Revistas = new ArrayList<>();
+        listaLibro = new ArrayList<>();
+        ilustraciones = new ArrayList<>();
+        revistas = new ArrayList<>();
     }
     
    public void agregarPublicacion(Publicacion pub) {
@@ -31,11 +31,11 @@ public class Biblioteca {
         } else {
             publicaciones.add(pub);
             if (pub instanceof Libro) {
-                ListaLibro.add((Libro) pub);
+                listaLibro.add((Libro) pub);
             }else if (pub instanceof Ilustracion) {
-                Ilustraciones.add((Ilustracion) pub);
+                ilustraciones.add((Ilustracion) pub);
            } else if(pub instanceof Revista){
-               Revistas.add((Revista)pub);
+               revistas.add((Revista)pub);
            }   
                 
             
@@ -72,41 +72,41 @@ public class Biblioteca {
 
     }
     
-    public void OrdenarPorTitulo(){
+    public void ordenarPorTitulo(){
         Collections.sort(publicaciones, new ComparadorPorNombre());
         System.out.println("/nOrdenados por titulo");
         publicaciones.forEach(System.out::println);
     }
     
-    public void OrdenarAutoLibro(){
-        Collections.sort(ListaLibro, new CompararNombreAutorLibro());
+    public void ordenarAutoLibro(){
+        Collections.sort(listaLibro, new CompararNombreAutorLibro());
         System.out.println("/n Ordenado por Autor");
-        ListaLibro.forEach(System.out::println);
+        listaLibro.forEach(System.out::println);
     }
         
-     public void OrdenarPorArea(){
-        Collections.sort(Ilustraciones, new CompararArea());
+     public void ordenarPorArea(){
+        Collections.sort(ilustraciones, new CompararArea());
         System.out.println("/n ordenado por area");
-        Ilustraciones.forEach(System.out::println);
+        ilustraciones.forEach(System.out::println);
      }
      
-     public void OrdenarPorTipo(){
+     public void ordenarPorTipo(){
            System.out.println("\n Publicaciones en la Biblioteca:");
         if (publicaciones.isEmpty()) {
             System.out.println("No hay publicaciones registradas.");
         } else {
-            ListaLibro.forEach(System.out::println);
-            Revistas.forEach(System.out::println);
-            Ilustraciones.forEach(System.out::println);
+            listaLibro.forEach(System.out::println);
+            revistas.forEach(System.out::println);
+            ilustraciones.forEach(System.out::println);
             }
         }        
      
-     public void OrdenarPorAñoLibro(){
-         if (ListaLibro.isEmpty()){
+     public void ordenarPorAñoLibro(){
+         if (listaLibro.isEmpty()){
              System.out.println("no hay libros registrados");
             } else {
-                     Libro libroviejo= Collections.min(ListaLibro);
-                     Libro libronuevo = Collections.max(ListaLibro);
+                     Libro libroviejo= Collections.min(listaLibro);
+                     Libro libronuevo = Collections.max(listaLibro);
                      
          System.out.println("libro mas viejo es" + libroviejo);
          System.out.println("libro mas nuevo es" + libronuevo);

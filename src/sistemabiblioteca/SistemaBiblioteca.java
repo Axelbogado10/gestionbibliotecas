@@ -124,19 +124,19 @@ case 6:
                    biblioteca.OrdenarPoraAño();
                    break;
 case 7:      
-                   biblioteca.OrdenarPorTitulo();
+                   biblioteca.ordenarPorTitulo();
                    break;
 case 8:
-                   biblioteca.OrdenarAutoLibro();
+                   biblioteca.ordenarAutoLibro();
                    break;
 case 9:
-                   biblioteca.OrdenarPorArea();
+                   biblioteca.ordenarPorArea();
                    break;
 case 10:
-                   biblioteca.OrdenarPorTipo();
+                   biblioteca.ordenarPorTipo();
                    break;
 case 11:
-                   biblioteca.OrdenarPorAñoLibro();
+                   biblioteca.ordenarPorAñoLibro();
                    break;                 
                    //dsdddsssdf
 case 0:
